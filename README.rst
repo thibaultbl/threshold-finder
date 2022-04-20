@@ -1,7 +1,8 @@
 Installation
 ============
 
-.. code-block
+.. code-block:: bash
+
     pip install threshold-finder
 
 
