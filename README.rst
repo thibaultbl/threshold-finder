@@ -1,7 +1,7 @@
 Usage
 =====
 
-Folowwing display an usage example::
+Folowwing display an usage example
 
 ..  code-block:: python
     from threshold_finder.finder import OptimalThresholdFinder, ThresholdFinder, YoudenThresholdFinder
