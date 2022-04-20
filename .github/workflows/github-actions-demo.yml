@@ -2,7 +2,7 @@ name: CI
 on: push
 
 jobs:
-  setup:
+  test:
     strategy:
       fail-fast: false
       matrix:
@@ -18,19 +18,9 @@ jobs:
         run: |
           pip install poetry
           poetry install
-  test:
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: [3.7, 3.8, 3.9]
-    runs-on: ubuntu-latest
-    needs: setup
-    defaults:
-      run:
-        shell: bash
-    steps:
       - name: tests
         run: poetry run pytest
+
       
   deploy:
     strategy:
@@ -43,6 +33,12 @@ jobs:
         shell: bash
     needs: test
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          pip install poetry
+          poetry install
       - name: build
         run: poetry build
       - name: publish
