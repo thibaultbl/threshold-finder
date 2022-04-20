@@ -3,7 +3,7 @@ Usage
 
 Folowing display an usage example.
 
-.. code-block:: python
+.. code-block::
     from threshold_finder.finder import OptimalThresholdFinder, ThresholdFinder, YoudenThresholdFinder
 
     # Example data
