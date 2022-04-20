@@ -10,10 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: ls
+      - run: pwd
       - run: echo "test"
       - name: Install dependencies
         run: |
           pip install poetry
           poetry install
       - name: tests
-        run: python -m pytest
+        run: poetry run pytest
