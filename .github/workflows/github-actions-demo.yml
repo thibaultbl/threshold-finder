@@ -12,6 +12,8 @@ jobs:
       run:
         shell: bash
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
       - name: Install dependencies
         run: |
           pip install poetry
