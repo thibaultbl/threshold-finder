@@ -30,7 +30,7 @@ jobs:
         shell: bash
     steps:
       - name: tests
-        run: python -m pytest
+        run: poetry run pytest
       
   deploy:
     strategy:
