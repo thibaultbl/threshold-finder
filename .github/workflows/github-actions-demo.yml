@@ -42,4 +42,4 @@ jobs:
       - name: build
         run: poetry build
       - name: publish
-        run: poetry publish
+        run: poetry publish -u thibaultB -p ${{ secrets.PYPI_PASSWORD }}
