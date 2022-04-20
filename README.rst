@@ -3,6 +3,17 @@ Usage
 
 Folowing display an usage example.
 
+.. code-block:: python
+
+    >>> from threshold_finder.finder import OptimalThresholdFinder, ThresholdFinder, YoudenThresholdFinder
+    >>> true_label = pd.Series([1,1,1,0,0,0])
+    >>> predicted_proba = pd.Series([0.9, 0.8, 0.7, 0.72, 0.6, 0.5])
+
+    >>> finder = YoudenThresholdFinder()
+    >>> optimal_threshold = finder.optimal_threshold(true_label, predicted_proba)
+    >>> print(optimal_threshold)
+    0.7
+
 .. code-block::
     from threshold_finder.finder import OptimalThresholdFinder, ThresholdFinder, YoudenThresholdFinder
 
