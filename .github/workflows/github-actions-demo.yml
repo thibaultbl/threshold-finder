@@ -12,6 +12,8 @@ jobs:
     steps:
       - run: echo "test"
       - name: Install dependencies
-        run: poetry install
+        run: |
+          pip install poetry
+          poetry install
       - name: tests
         run: python -m pytest
