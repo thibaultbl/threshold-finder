@@ -11,5 +11,8 @@ jobs:
         os: [ubuntu-18.04]
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Install dependencies
+          run: |
+            poetry install
       - name: tests
-        run: pytest
+          run: python -m pytest
