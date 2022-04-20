@@ -1,3 +1,10 @@
+Installation
+============
+
+.. code-block
+    pip install threshold-finder
+
+
 Usage
 =====
 
