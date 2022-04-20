@@ -2,18 +2,18 @@ import pandas as pd
 import pytest
 
 from threshold_finder import __version__
-from threshold_finder.finder import OptimalThresholdFinder, ThresholdFinderFactory, YoudenThresholdFinder
+from threshold_finder.finder import OptimalThresholdFinder, ThresholdFinder, YoudenThresholdFinder
 
-class TestThresholdFinderFactory:
+class TestThresholdFinder:
     def test_get_finder(self):
-        finder = ThresholdFinderFactory().get_finder(method="youden_statistic")
+        finder = ThresholdFinder().get_finder(method="youden_statistic")
 
         assert isinstance(finder, YoudenThresholdFinder)
         assert isinstance(finder, OptimalThresholdFinder)
     
     def test_wrong_method(self):
         with pytest.raises(ValueError):
-            finder = ThresholdFinderFactory().get_finder(method="wrong_method")
+            finder = ThresholdFinder().get_finder(method="wrong_method")
 
 class TestYoudenThresholdFinder:
     def setup_method(self):
@@ -26,6 +26,6 @@ class TestYoudenThresholdFinder:
         threshold = finder.optimal_threshold(self.true_label, self.predicted_proba)
 
         assert isinstance(threshold, float)
-        assert threshold == 0.71
+        assert threshold == 0.70
 
 

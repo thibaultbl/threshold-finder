@@ -5,7 +5,9 @@ description = "Finding optimal threshold based on ROC CURVE."
 authors = ["thibaultbl"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
+pandas = "^1.4.2"
+scikit-learn = "^1.0.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
